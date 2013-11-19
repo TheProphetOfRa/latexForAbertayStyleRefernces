@@ -1,0 +1,56 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+
+%set up page geomotry
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   		% ... or a4paper or a5paper or ... 
+\geometry
+{
+	top=25mm,
+	right=25mm,
+	bottom=25mm,
+	left=38mm
+}
+
+\usepackage{graphicx}				% Use pdf, png, jpg, or epsÂ§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+
+%spacing package for double spacing
+\usepackage{setspace}
+
+%todo notes
+\usepackage{xcolor}
+\newcommand\todo[1]{\textcolor{red}{#1}}
+
+%bibiligraphy
+\usepackage{natbib}
+
+%hyperlinks and pdfbookmarks
+\usepackage[bookmarks=true,
+			pdfborder={0 0 0},
+			backref
+            ]{hyperref}
+\hypersetup{
+	bookmarksopen=true,
+	colorlinks = true,
+	linkcolor = blue,
+	urlcolor  = blue,
+	citecolor = red
+}
+
+%Create title information
+\title{TITLE_OF_DOCUMENT}
+\author{YOUR_NAME}
+%set date to date compiled
+\date{\today}
+
+%end preamble start document
+\begin{document}
+
+%adds a phantom section so contents page link will point to correct page
+\phantomsection
+\addcontentsline{toc}{section}{References} %add section to contents page
+\bibliographystyle{abertay} %use abertay refernce style
+\bibliography{ref} load refernce file
+
+\end{document}  
