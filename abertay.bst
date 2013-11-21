@@ -701,7 +701,7 @@ FUNCTION {multi.page.check}
     }
     { t #1 #1 substring$
       duplicate$ "-" =
-      swap$ duplicate$ "," =
+      swap$ duplicate$ "." =
       swap$ "+" =
       or or
         { #1 'multiresult := }
@@ -733,7 +733,7 @@ FUNCTION {format.journal.pages}
     { swap$ duplicate$ empty$
         { pop$ pop$ format.pages }
         {
-          ", " *
+          ". " *
           swap$
           n.dashify
           pages multi.page.check
@@ -754,7 +754,7 @@ FUNCTION {format.journal.eid}
   duplicate$ empty$ 'pop$
     { swap$ duplicate$ empty$ 'skip$
       {
-          ", " *
+          ". " *
       }
       if$
       swap$ *
@@ -798,7 +798,7 @@ FUNCTION {format.chapter.pages}
       * *
       pages empty$
         'skip$
-        { ", " * format.pages * }
+        { ". " * format.pages * }
       if$
     }
   if$
@@ -1203,6 +1203,16 @@ FUNCTION {game}
   publisher "publisher" bibinfo.check output
   new.block
   fin.entry
+}
+FUNCTION {software}
+{ output.bibitem
+    author "author" bibinfo.check output
+    format.date "year" output.check
+    date.block
+    title "title" bibinfo.check output
+    format.url output
+    new.block
+    fin.entry
 }
 
 FUNCTION {default.type} { misc }
