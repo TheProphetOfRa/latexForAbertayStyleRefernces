@@ -38,4 +38,22 @@ The Abertay reference style file also supports the referencing of games, however
 ```
 
 As noted above the title must be italicised in the ref.bib file. The author field should contain a reiteration of the title, however it should be noted that the author field will not be written anywhere in the file and is solely for sorting purposes. For multi word titles the title should be wrapped in an additional set of braces to avoid formatting. Also when citing use the \citeyearpar notation as this will remove the author from the citation and wrap the citation in brackets.
+Software
+--------
+Software also needs a workaround in the following format:
 
+```
+@SOFTWARE{tag,
+
+    author={{Software Developer/Publisher}},
+
+    title={\textit{software title} [software] Version no},
+
+    year={2013},
+
+    url={http://a.url},
+
+}
+```
+
+The publisher can also be added in the normal position i.e. publisher={Software Publisher}
